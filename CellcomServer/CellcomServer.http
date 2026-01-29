@@ -1,0 +1,6 @@
+@CellcomServer_HostAddress = http://localhost:5137
+
+GET {{CellcomServer_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
