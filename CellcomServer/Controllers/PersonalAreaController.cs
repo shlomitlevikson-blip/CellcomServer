@@ -166,17 +166,17 @@ namespace CellcomServer.Controllers
 
                 if (request.Image != null)
                 {
-                    // 1️⃣ Generate a unique file name
+                    // Generate a unique file name
                     var fileName = $"{Guid.NewGuid()}{Path.GetExtension(request.Image.FileName)}";
 
-                    // 2️⃣ This is where you put it — combine directory + folder + file name
+                    // This is where you put it — combine directory + folder + file name
                     var savePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images/products", fileName);
 
-                    // 3️⃣ Save the file
+                    // Save the file
                     using var stream = new FileStream(savePath, FileMode.Create);
                     await request.Image.CopyToAsync(stream);
 
-                    // 4️⃣ Store the relative URL in database
+                    // Store the relative URL in database
                     imagePath = $"/images/products/{fileName}";
                 }
 
