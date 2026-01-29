@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="DatabaseScript\" />
     <Folder Include="wwwroot\images\products\" />
   </ItemGroup>
 
